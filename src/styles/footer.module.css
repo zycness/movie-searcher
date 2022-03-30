@@ -1,0 +1,14 @@
+.footerContainer {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 7vh;
+    background: var(--color-60-shade);
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.footerTitle, .footerTitle a {
+    color: var(--color-extra-shade);
+    font-family: var(--font-page);
+}
