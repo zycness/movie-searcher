@@ -1,19 +1,19 @@
 .homeContainer {
-    width: 100vw;
-    max-width: 100%;
-    min-height: 100vh;
-    background: var(--color-60);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 86vh;
+  background: var(--color-60);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .homeTitle {
-    display: inline-block;
-    color: var(--color-30);
-    text-align: center;
-    padding-top: 30px;
-    font-family: var(--font-page);
-    font-size: 2.5rem;
-    border-bottom: 2px solid var(--color-10);
+  display: inline-block;
+  color: var(--color-30);
+  text-align: center;
+  padding-top: 30px;
+  font-family: var(--font-page);
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--color-10);
 }
