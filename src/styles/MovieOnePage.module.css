@@ -1,0 +1,76 @@
+.oneMovieContainer {
+  min-height: 100vh;
+  background: var(--color-60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movieContainer {
+  width: 70vw;
+  max-width: 100%;
+  min-height: 90vh;
+  background: var(--color-60-shade);
+  color: var(--color-30);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50%);
+  place-content: center;
+  place-items: center;
+  border-radius: 10px;
+  /* border: 1px solid var(--color-10); */
+  box-shadow: var(--box-shadow-container);
+  margin: 100px 0;
+  padding: 20px 0;
+}
+
+.movieTextContainer {
+  padding: 30px;
+}
+
+.movieTextInfo {
+  font-family: var(--font-text);
+  font-weight: 300;
+  font-size: 1.7rem;
+  padding: 10px 0;
+}
+
+.movieTextInfo span {
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-10);
+}
+
+.movieTextTitle {
+  font-family: var(--font-page);
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+.movieTextDesc {
+  word-break: break-word;
+  hyphens: manual;
+}
+
+.movieImg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  align-self: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  .movieContainer {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  
+  .movieTextInfo {
+    font-size: 1rem;
+  }
+  .movieTextTitle {
+    font-size: 2.5rem;
+  }
+}

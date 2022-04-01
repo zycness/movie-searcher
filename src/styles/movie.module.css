@@ -1,3 +1,7 @@
+.movieLink {
+  text-decoration: none;
+}
+
 .movieContainer {
   display: flex;
   flex-direction: column;
@@ -12,10 +16,12 @@
   /* border: 1px solid var(--color-10); */
   box-shadow: var(--box-shadow-container);
   max-width: 435px;
+  height: 700px;
 }
 
 .moviePoster {
-  height: 550px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
   align-self: center;
 }

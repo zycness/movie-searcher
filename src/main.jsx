@@ -2,19 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import Home from "./pages/Home";
-import Movie from "./components/MovieItem";
+import Recomendacion from "./pages/Recomendacion";
 import MovieList from "./pages/MovieList";
-import Profile from "./pages/Profile";
+import MovieOnePage from "./pages/MovieOnePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 ReactDOM.render(
   <BrowserRouter>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="MovieList" element={<MovieList />} />
-        <Route path="Movie/:movieId" element={<Movie />} />
-        <Route path="Profile" element={<Profile />} />
-        <Route index element={<Home />} />
+        <Route path="MovieList/:movieId" element={<MovieOnePage />} />
+        <Route path="MovieList/Page/:pageId" element={<MovieList />} />
+        <Route path="Recomendacion/Page/:pageId" element={<Recomendacion />} />
+        <Route index element={<Recomendacion />} />
       </Route>
     </Routes>
   </BrowserRouter>,

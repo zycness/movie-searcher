@@ -4,24 +4,33 @@ import { useEffect } from "react";
 import { fetchMovies } from "../features/slices/movieSlice";
 import MovieItem from "../components/MovieItem";
 import styles from "../styles/movieList.module.css";
+import PreviousOrNext from "../components/PreviousOrNext";
+import { useParams } from "react-router-dom";
 
 const MovieList = () => {
   const dispatch = useDispatch();
   const { movieList } = useSelector((state) => state.movies);
+  const { pageId } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovies());
-  }, [dispatch]);
+    dispatch(fetchMovies(pageId));
+  }, [dispatch, pageId]);
+
 
   return (
     <div className={styles.movieListContainer}>
-      <h2 className={styles.movieListTitle}>Sección de películas</h2>
+      <h2 className={styles.movieListTitle}>Sección con todas las películas</h2>
       <div className={styles.movieListItems}>
         {movieList.results &&
           movieList.results.map((item) => {
             return <MovieItem key={item.id} movie={item} />;
           })}
       </div>
+      {movieList.page ? (
+        <PreviousOrNext props={movieList} poss="MovieList" />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

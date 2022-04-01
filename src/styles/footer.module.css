@@ -12,3 +12,19 @@
     color: var(--color-extra-shade);
     font-family: var(--font-page);
 }
+
+.footerContacts {
+    background: var(--color-60-shade);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContactsList {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    list-style-type: none;
+}
