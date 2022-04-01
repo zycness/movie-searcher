@@ -5,6 +5,7 @@ import { getWeekPopularMovies } from "../features/slices/movieSlice";
 import MovieItem from "../components/MovieItem";
 import { useParams } from "react-router-dom";
 import PreviousOrNext from "../components/PreviousOrNext";
+import PaginationMovies from "../components/PaginationMovies";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Home = () => {
           : "error"}
       </div>
       {weeklyMovies.page ? (
-        <PreviousOrNext props={weeklyMovies} poss="Recomendacion" />
+        <PaginationMovies movie={weeklyMovies} poss="Recomendacion" />
       ) : (
         ""
       )}

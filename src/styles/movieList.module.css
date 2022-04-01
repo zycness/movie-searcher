@@ -27,6 +27,13 @@
   grid-auto-rows: auto;
   place-content: center;
   gap: 25px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .movieListContainer {
+    padding-top: 49px;
+  }
 }
 
 @media screen and (max-width: 768px) {

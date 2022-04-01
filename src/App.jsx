@@ -10,22 +10,17 @@ import { IconContext } from "react-icons";
 const App = () => {
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    let navbar = document.querySelector(`.${styles.navbar__itemContainer}`);
-    if (show) {
-      navbar.style.display = "flex";
-    } else {
-      navbar.style.display = "none";
-    }
-  }, [show]);
-
   return (
     <Provider store={movieStore}>
       <div>
         <header className={styles.navbarContainer}>
           <nav className={styles.navbar}>
             <h1 className={styles.navbarLogo}>Movie Searcher</h1>
-            <ul className={styles.navbar__itemContainer}>
+            <ul
+              className={`${styles.navbar__itemContainer} ${
+                show ? styles.show : ""
+              }`}
+            >
               <li className={styles.navbar__item}>
                 <Link
                   className={styles.navbar__itemLink}
@@ -49,7 +44,13 @@ const App = () => {
                 </Link>
               </li>
               <li className={styles.navbar__item}>
-                <a href="#contacto" className={styles.navbar__itemLink}>
+                <a
+                  href="#contacto"
+                  className={styles.navbar__itemLink}
+                  onClick={() => {
+                    setShow(false);
+                  }}
+                >
                   Contacto
                 </a>
               </li>
@@ -60,7 +61,7 @@ const App = () => {
               <span
                 className={styles.navbarIconContainer}
                 onClick={() => {
-                  setShow((state) => !state);
+                  setShow(!show);
                 }}
               >
                 <BiMenu />

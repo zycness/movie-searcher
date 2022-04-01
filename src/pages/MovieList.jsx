@@ -6,6 +6,7 @@ import MovieItem from "../components/MovieItem";
 import styles from "../styles/movieList.module.css";
 import PreviousOrNext from "../components/PreviousOrNext";
 import { useParams } from "react-router-dom";
+import PaginationMovies from "../components/PaginationMovies";
 
 const MovieList = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,6 @@ const MovieList = () => {
   useEffect(() => {
     dispatch(fetchMovies(pageId));
   }, [dispatch, pageId]);
-
 
   return (
     <div className={styles.movieListContainer}>
@@ -27,7 +27,7 @@ const MovieList = () => {
           })}
       </div>
       {movieList.page ? (
-        <PreviousOrNext props={movieList} poss="MovieList" />
+        <PaginationMovies movie={movieList} poss="MovieList" />
       ) : (
         ""
       )}
