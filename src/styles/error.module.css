@@ -1,0 +1,20 @@
+.errorPageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorTitle {
+  font-size: 3rem;
+  margin-bottom: 100px;
+  color: #fff;
+}
+
+@media screen and (max-width: 830px) {
+  .errorTitle {
+    font-size: 2rem;
+  }
+}
