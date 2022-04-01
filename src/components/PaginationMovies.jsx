@@ -18,6 +18,10 @@ const PaginationMovies = ({ movie, poss }) => {
       total={movie.total_pages}
       siblings={3}
       radius="xs"
+      styles={{
+        item: { backgroundColor: "#00203d", color: "#fff", border: "none" },
+        dots: { color: "#fff" },
+      }}
     />
   );
 };

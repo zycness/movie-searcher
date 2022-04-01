@@ -8,6 +8,25 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--color-60);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-10);
+  background-clip: padding-box;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(82, 82, 82, 0.1);
+}
+/* variables */
 :root {
   --font-page: "Lato", sans-serif;
   --font-text: "Roboto", sans-serif;
@@ -22,6 +41,7 @@
     rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+/* navbar */
 .navbar__itemContainer {
   display: flex;
   flex-direction: row;
