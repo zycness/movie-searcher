@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import styles from "../styles/home.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeekPopularMovies } from "../features/slices/movieSlice";
 import MovieItem from "../components/MovieItem";
 import { useParams } from "react-router-dom";
-import PreviousOrNext from "../components/PreviousOrNext";
 import PaginationMovies from "../components/PaginationMovies";
 
 const Home = () => {
@@ -12,9 +11,10 @@ const Home = () => {
   const { weeklyMovies } = useSelector((state) => state.movies);
   const { pageId } = useParams();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(getWeekPopularMovies(pageId));
-  }, [dispatch, pageId]);
+  }, [pageId]);
+
   return (
     <div className={styles.homeContainer}>
       <h2 className={styles.homeTitle}>Peliculas populares de esta semana</h2>
@@ -23,7 +23,7 @@ const Home = () => {
           ? weeklyMovies.results.map((item) => {
               return <MovieItem key={item.id} movie={item} />;
             })
-          : "error"}
+          : "Ha ocurrido un error"}
       </div>
       {weeklyMovies.page ? (
         <PaginationMovies movie={weeklyMovies} poss="Recomendacion" />
