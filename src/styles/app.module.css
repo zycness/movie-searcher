@@ -114,14 +114,13 @@ body {
 
   .navbar__itemContainer {
     background: var(--color-60-shade);
-    height: 100vh;
+    height: calc(100vh - 49px);
     width: 100vw;
     max-width: 100%;
     top: 49px;
     right: -100%;
     position: fixed;
     flex-direction: column;
-    justify-content: space-evenly;
     transition: all 150ms ease-in-out;
     z-index: 10;
   }
@@ -143,6 +142,7 @@ body {
     display: grid;
     place-content: center;
     transition: background 300ms ease-out;
+    padding: 40px 0;
   }
 
   .navbar__itemLink:active {

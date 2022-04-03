@@ -3,7 +3,6 @@ import { Pagination } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
 const PaginationMovies = ({ movie, poss }) => {
-  console.log(movie);
   const [activePage, setActivePage] = useState(1);
   const navigate = useNavigate();
 
